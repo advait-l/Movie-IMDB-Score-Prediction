@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Report.aux
+The style file: unsrt.bst
+Database file #1: Bibliography.bib
+I was expecting a `,' or a `}'---line 4 of file Bibliography.bib
+ :  
+ :  publisher={Spiegel Online}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in IMDB
+Warning--empty year in IMDB
+Warning--empty journal in rating
+Warning--empty year in rating
+Warning--empty journal in data
+Warning--empty year in data
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            455 strings with 3788 characters,
+and the built_in function-call counts, 392 in all, are:
+= -- 24
+> -- 12
+< -- 0
++ -- 6
+- -- 3
+* -- 20
+:= -- 72
+add.period$ -- 6
+call.type$ -- 3
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 24
+empty$ -- 43
+format.name$ -- 3
+if$ -- 76
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 15
+num.names$ -- 3
+pop$ -- 18
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 9
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 6
+while$ -- 3
+width$ -- 4
+write$ -- 23
+(There was 1 error message)
