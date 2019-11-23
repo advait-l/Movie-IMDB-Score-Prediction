@@ -43,6 +43,7 @@ def rating(df):
     df['content_rating'].replace(to_replace = ['Approved','Not Rated', 'Passed', 'Unrated','TV-MA'] , value = 'R', inplace = True)
     df['content_rating'].replace(to_replace = ['TV-G','TV-Y'] , value = 'G', inplace = True)
     df['content_rating'].replace(to_replace = 'TV-14' , value = 'PG-13', inplace = True)
+    df['content_rating'].fillna('R',inplace = True)
 
     return df
 if __name__ == "__main__":
