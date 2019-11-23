@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from collections import Counter
 
 def imdbScoreHistogram(df):
     labels = df["imdb_score"]
@@ -30,8 +31,5 @@ if __name__ == "__main__":
     df = pd.read_csv("movie_metadata/movie_metadata.csv")
     df2 = pd.read_csv("movie_metadata/movie_metadata.csv")
     df2.dropna(inplace = True)
-    #imdbScoreHistogram(df)
-    #pairplot(df2)
-    #pairplots_specific(df2)
-    correlation_matrix(df2)
+
     # print(sum(duplicated(df)))
