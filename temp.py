@@ -34,6 +34,11 @@ def handlingValues(df):
     # Profit column
     df["profit"] = df["gross"] - df["budget"]
 
+    #Critic review ratio column
+    df["critc_review_ratio"] = df["num_critic_for_reviews"] / df["num_user_for_reviews"]
+
+    df = df.drop(columns=["gross","budget","num_critic_for_reviews","num_user_for_reviews"])
+
     df['content_rating'].replace(to_replace = ['M', 'GP', 'TV-PG','TV-Y7'] , value = 'PG', inplace = True)
     df['content_rating'].replace(to_replace = ['X'] , value = 'NC-17', inplace = True)
     df['content_rating'].replace(to_replace = ['Approved','Not Rated', 'Passed', 'Unrated','TV-MA'] , value = 'R', inplace = True)
