@@ -81,7 +81,9 @@ The dataset consists of the following fields:
 	\item \textbf{aspect$\_$ratio}  : a numeric field which identifies the aspect ratio of the movie. 
 	\item \textbf{movie$\_$facebook$\_$likes}  : a numeric field which identifies the number of likes on facebook of the movie.\\
 \end{itemize}
-\subsection{Data Visualization}
+\subsection{Data Exploration and Visualization}
+
+
 % Label frequency
 \begin{figure}[H]
   \centering	
@@ -92,6 +94,19 @@ The dataset consists of the following fields:
 \end{figure}
 
 \section{Pre-Processing}
+\subsection{Dropping rows}
+The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.
+\subsection{Dropping columns}
+	\begin{enumerate}
+		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.
+		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.
+		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.
+		\item $plot\_keywords, director\_name, actor\_1\_name, actor\_2\_name,			\\ actor\_3\_name, genres, movie\_imdb\_link$ : Most of the values in 			these fields are unique, so we dropped all of these columns.
+	\end{enumerate}
+\subsection{Labelling}
+The $country$ column had over 79$\%$ of values as USA and 8$\%$ as UK. So we labelled all the other countries as $Others$.
+
+
 \section{Feature Extraction}
 \section{Model Building}
 \newpage

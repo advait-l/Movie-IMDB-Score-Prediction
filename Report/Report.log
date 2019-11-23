@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 15:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,18 +440,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<../visualizations/IMDB-Score-Histogram.png, id=56, 462.528pt x 346.896pt>
+<../visualizations/IMDB-Score-Histogram.png, id=68, 462.528pt x 346.896pt>
 File: ../visualizations/IMDB-Score-Histogram.png Graphic file (type png)
 <use ../visualizations/IMDB-Score-Histogram.png>
 Package pdftex.def Info: ../visualizations/IMDB-Score-Histogram.png  used on in
-put line 89.
+put line 91.
 (pdftex.def)             Requested size: 256.08499pt x 170.71628pt.
 
-Overfull \hbox (4.08499pt too wide) in paragraph at lines 89--90
+Overfull \hbox (4.08499pt too wide) in paragraph at lines 91--92
  [][] 
  []
 
-(./Report.bbl)
+
+Underfull \hbox (badness 2096) in paragraph at lines 101--102
+[]$\OML/cmm/m/it/10 aspect[]ratio$ \OT1/ptm/m/n/10 : The two most fre-quent val
+-ues of
+ []
+
+
+Overfull \hbox (44.74092pt too wide) in paragraph at lines 104--105
+[]$\OML/cmm/m/it/10 plot[]keywords; director[]name; actor[]\OT1/cmr/m/n/10 1[]\
+OML/cmm/m/it/10 name; actor[]\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 name; [] 
+ []
+
+[2 <../visualizations/IMDB-Score-Histogram.png>] (./Report.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -463,33 +475,37 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-[2 <../visualizations/IMDB-Score-Histogram.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+[3
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 95DC769D3BCF68552F1858AA754CFC82;467.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+(rerunfilecheck)             Checksum: EEF166E5E68A9D70307BE452792151EF;671.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 7460 strings out of 494880
- 115816 string characters out of 6179601
+ 7471 strings out of 494880
+ 115936 string characters out of 6179601
  208195 words of memory out of 5000000
- 10713 multiletter control sequences out of 15000+600000
+ 10716 multiletter control sequences out of 15000+600000
  34568 words of font info for 65 fonts, out of 8000000 for 9000
  39 hyphenation exceptions out of 8191
  36i,9n,39p,417b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report.pdf (2 pages, 76910 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Report.pdf (3 pages, 102710 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 500000)
- 84 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 120 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

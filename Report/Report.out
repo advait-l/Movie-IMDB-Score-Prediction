@@ -2,8 +2,11 @@
 \BOOKMARK [1][-]{section.2}{Problem Statement}{}% 2
 \BOOKMARK [1][-]{section.3}{Data}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Data Description}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{Data Visualization}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Data Exploration and Visualization}{section.3}% 5
 \BOOKMARK [1][-]{section.4}{Pre-Processing}{}% 6
-\BOOKMARK [1][-]{section.5}{Feature Extraction}{}% 7
-\BOOKMARK [1][-]{section.6}{Model Building}{}% 8
-\BOOKMARK [1][-]{section*.2}{References}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Dropping rows}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Dropping columns}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Labelling}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Feature Extraction}{}% 10
+\BOOKMARK [1][-]{section.6}{Model Building}{}% 11
+\BOOKMARK [1][-]{section*.2}{References}{}% 12
