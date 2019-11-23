@@ -82,17 +82,58 @@ The dataset consists of the following fields:
 	\item \textbf{movie$\_$facebook$\_$likes}  : a numeric field which identifies the number of likes on facebook of the movie.\\
 \end{itemize}
 \subsection{Data Exploration and Visualization}
-
-
-% Label frequency
+In this section, we explore the dataset through various types of plots -
+% IMBD-score histogram
 \begin{figure}[H]
   \centering	
   \captionsetup{justification=centering}
-  \includegraphics[height=6cm, width=9cm, trim={0mm 0mm 0mm 0mm},clip]{../visualizations/IMDB-Score-Histogram}
+  \includegraphics[height=8cm, width=9cm, trim={20mm 0mm 10mm 0mm},clip]{../visualizations/IMDB-Score-Histogram}
   \caption{IMDB-Score histogram}
   \label{fig:fig1}
 \end{figure}
+Fig. 1 shows the distribution of IMDb scores with buckets of size 200. We can observe that a majority of movies have a rating between 5.5 and 7.5.
 
+% Language histogram
+\begin{figure}[H]
+  \centering	
+  \captionsetup{justification=centering}
+  \includegraphics[height=8cm, width=10cm, trim={20mm 0mm 10mm 20mm},clip]{../visualizations/Language-Histogram}
+  \caption{Language frequency plot}
+  \label{fig:fig2}
+\end{figure}
+Fig. 2 shows the distribution of movies according to the language in which they were made. We can observe that an overwhelming majority of the movies are in English language and the rest of the movies are made in all the other languages.
+
+% Country histogram
+\begin{figure}[H]
+  \centering	
+  \captionsetup{justification=centering}
+  \includegraphics[height=8cm, width=10cm, trim={20mm 0mm 10mm 20mm},clip]{../visualizations/Country-Histogram.png}
+  \caption{Country frequency plot}
+  \label{fig:fig3}
+\end{figure}
+Fig. 3 shows the distribution of movies according to the countries in which they were made. We can observe that an overwhelming majority of the movies are from the USA. UK also has a fair share of movies. All  the other countries make up for the rest of the data.
+
+% Color histogram
+\begin{figure}[H]
+  \centering	
+  \captionsetup{justification=centering}
+  \includegraphics[height=8cm, width=9cm, trim={30mm 0mm 20mm 0mm},clip]{../visualizations/Colour-Histogram}
+  \caption{Color frequency plot}
+  \label{fig:fig4}
+\end{figure}
+Fig. 4 shows that the majority of the movies are colored while very few are black-and-white.
+
+% Correlation matrix
+\begin{figure}[H]
+  \centering	
+  \captionsetup{justification=centering}
+  \includegraphics[height=8.5cm, width=10cm, trim={20mm 20mm 20mm 40mm},clip]{../visualizations/corr_matrix.png}
+  \caption{Correlation matrix among all the features.}
+  \label{fig:fig5}
+\end{figure}
+Fig. 5 shows the correlation matrix among the features. The covariance values of all the features are investigated against the IMDb score.
+
+\newpage
 \section{Pre-Processing}
 \subsection{Dropping rows}
 The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.
@@ -101,10 +142,10 @@ The columns $gross$ and $budget$ had the maximum number of missing values, 884 a
 		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.
 		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.
 		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.
-		\item $plot\_keywords, director\_name, actor\_1\_name, actor\_2\_name,			\\ actor\_3\_name, genres, movie\_imdb\_link$ : Most of the values in 			these fields are unique, so we dropped all of these columns.
+		\item $plot\_keywords, director\_name, actor\_1\_name, \\ actor					\_2\_name,			actor\_3\_name, genres,\\ movie\_imdb\_link$ : 				Most 			of the values in 				these fields are 				unique, so we dropped 		all of these columns.
 	\end{enumerate}
 \subsection{Labelling}
-The $country$ column had over 79$\%$ of values as USA and 8$\%$ as UK. So we labelled all the other countries as $Others$.
+The $country$ column had over 79$\%$ of values as $USA$ and 8$\%$ as $UK$. So we labelled all the other countries as $Others$.
 
 
 \section{Feature Extraction}

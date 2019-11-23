@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,30 +440,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<../visualizations/IMDB-Score-Histogram.png, id=68, 462.528pt x 346.896pt>
+<../visualizations/IMDB-Score-Histogram.png, id=68, 578.16pt x 397.485pt>
 File: ../visualizations/IMDB-Score-Histogram.png Graphic file (type png)
 <use ../visualizations/IMDB-Score-Histogram.png>
 Package pdftex.def Info: ../visualizations/IMDB-Score-Histogram.png  used on in
-put line 91.
-(pdftex.def)             Requested size: 256.08499pt x 170.71628pt.
+put line 90.
+(pdftex.def)             Requested size: 256.07793pt x 227.63019pt.
 
-Overfull \hbox (4.08499pt too wide) in paragraph at lines 91--92
+Overfull \hbox (4.07793pt too wide) in paragraph at lines 90--91
+ [][] 
+ []
+
+<../visualizations/Language-Histogram.png, id=71, 867.24pt x 722.7pt>
+File: ../visualizations/Language-Histogram.png Graphic file (type png)
+<use ../visualizations/Language-Histogram.png>
+Package pdftex.def Info: ../visualizations/Language-Histogram.png  used on inpu
+t line 100.
+(pdftex.def)             Requested size: 284.51952pt x 227.61671pt.
+
+Overfull \hbox (32.51952pt too wide) in paragraph at lines 100--101
+ [][] 
+ []
+
+<../visualizations/Country-Histogram.png, id=73, 867.24pt x 722.7pt>
+File: ../visualizations/Country-Histogram.png Graphic file (type png)
+<use ../visualizations/Country-Histogram.png>
+Package pdftex.def Info: ../visualizations/Country-Histogram.png  used on input
+ line 110.
+(pdftex.def)             Requested size: 284.51952pt x 227.61671pt.
+
+Overfull \hbox (32.51952pt too wide) in paragraph at lines 110--111
+ [][] 
+ []
+
+<../visualizations/Colour-Histogram.png, id=75, 867.24pt x 1011.78pt>
+File: ../visualizations/Colour-Histogram.png Graphic file (type png)
+<use ../visualizations/Colour-Histogram.png>
+Package pdftex.def Info: ../visualizations/Colour-Histogram.png  used on input 
+line 120.
+(pdftex.def)             Requested size: 256.06856pt x 227.6098pt.
+
+Overfull \hbox (4.06856pt too wide) in paragraph at lines 120--121
  [][] 
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 101--102
+Underfull \vbox (badness 8000) has occurred while \output is active []
+
+ [2 <../visualizations/IMDB-Score-Histogram.png> <../visualizations/Language-Hi
+stogram.png> <../visualizations/Country-Histogram.png>]
+<../visualizations/corr_matrix.png, id=90, 1300.86pt x 1300.86pt>
+File: ../visualizations/corr_matrix.png Graphic file (type png)
+<use ../visualizations/corr_matrix.png>
+Package pdftex.def Info: ../visualizations/corr_matrix.png  used on input line 
+130.
+(pdftex.def)             Requested size: 284.51721pt x 241.83797pt.
+
+Overfull \hbox (32.51721pt too wide) in paragraph at lines 130--131
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 142--143
 []$\OML/cmm/m/it/10 aspect[]ratio$ \OT1/ptm/m/n/10 : The two most fre-quent val
 -ues of
  []
 
-
-Overfull \hbox (44.74092pt too wide) in paragraph at lines 104--105
-[]$\OML/cmm/m/it/10 plot[]keywords; director[]name; actor[]\OT1/cmr/m/n/10 1[]\
-OML/cmm/m/it/10 name; actor[]\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 name; [] 
- []
-
-[2 <../visualizations/IMDB-Score-Histogram.png>] (./Report.bbl)
+[3 <../visualizations/Colour-Histogram.png> <../visualizations/corr_matrix.png>
+] (./Report.bbl)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -475,23 +519,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
-[3
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
+[4
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: EEF166E5E68A9D70307BE452792151EF;671.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
+(rerunfilecheck)             Checksum: C2E7B3B49F1202894C35A8C1F01B98D9;671.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
  ) 
 Here is how much of TeX's memory you used:
- 7471 strings out of 494880
- 115936 string characters out of 6179601
- 208195 words of memory out of 5000000
- 10716 multiletter control sequences out of 15000+600000
+ 7500 strings out of 494880
+ 116800 string characters out of 6179601
+ 208423 words of memory out of 5000000
+ 10736 multiletter control sequences out of 15000+600000
  34568 words of font info for 65 fonts, out of 8000000 for 9000
  39 hyphenation exceptions out of 8191
  36i,9n,39p,417b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -502,10 +550,10 @@ fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report.pdf (3 pages, 102710 bytes).
+Output written on Report.pdf (4 pages, 416202 bytes).
 PDF statistics:
- 120 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 
