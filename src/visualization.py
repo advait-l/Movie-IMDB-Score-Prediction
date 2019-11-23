@@ -8,6 +8,7 @@ def imdbScoreHistogram(df):
     plt.hist(labels, bins=20)
     plt.title("Distribution of the IMDB ratings")
     plt.savefig("visualizations/IMDB-Score-Histogram.png")
+    sns.pairplot(df)
 
 if __name__ == "__main__":
     df = pd.read_csv("movie_metadata/movie_metadata.csv")
