@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 
 
 def handlingValues(df):
@@ -33,13 +34,44 @@ def handlingValues(df):
     # Profit column
     df["profit"] = df["gross"] - df["budget"]
 
+    #Critic review ratio column
+    df["critc_review_ratio"] = df["num_critic_for_reviews"] / df["num_user_for_reviews"]
+
+    df = df.drop(columns=["gross","budget","num_critic_for_reviews","num_user_for_reviews"])
+
+    df['content_rating'].replace(to_replace = ['M', 'GP', 'TV-PG','TV-Y7'] , value = 'PG', inplace = True)
+    df['content_rating'].replace(to_replace = ['X'] , value = 'NC-17', inplace = True)
+    df['content_rating'].replace(to_replace = ['Approved','Not Rated', 'Passed', 'Unrated','TV-MA'] , value = 'R', inplace = True)
+    df['content_rating'].replace(to_replace = ['TV-G','TV-Y'] , value = 'G', inplace = True)
+    df['content_rating'].replace(to_replace = 'TV-14' , value = 'PG-13', inplace = True)
+    df['content_rating'].fillna('R',inplace = True)
+
+    return df
+
+def remove_duplicates(df):
+    df.drop_duplicates(subset="movie_title", keep= 'first', inplace = True)
+    return df
+
+def encoding(df):
+    
+    labelencoder = LabelEncoder()
+    df['content_rating'] = labelencoder.fit_transform(df['content_rating'])
+
+    df = pd.get_dummies(df, columns=['content_rating'])
+
+    df['country'] = labelencoder.fit_transform(df['country'])
+
+    df = pd.get_dummies(df, columns=['country'])
+
     return df
 
 if __name__ == "__main__":
     df = pd.read_csv("movie_metadata/movie_metadata.csv")
-    print(df.isnull().sum())
+    #print(df.isnull().sum())
     #print(df.info())
     df = handlingValues(df)
-    print("###########################################################################################")
+    df = remove_duplicates(df)
+    df = encoding(df)
     print(df.isnull().sum())
     print(df)
+    df.to_csv('movie_metadata/processed_data.csv')
