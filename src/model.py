@@ -8,15 +8,6 @@ from sklearn.metrics import  mean_squared_error, r2_score, accuracy_score
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.externals import joblib
 
-def linear_regression(x1,y1,x2,y2):
-    regr = linear_model.LinearRegression()
-    regr.fit(x1, y1)
-    imdb_predict = regr.predict(x2)
-    print("Coefficients : \n", regr.coef_)
-    print("Mean-squared-error : " + str(mean_squared_error(y2, imdb_predict)))
-    print("Variance : " + str(r2_score(y2, imdb_predict)))
-
-
 def random_forest(x1,y1,x2,y2):
     rfc = RandomForestClassifier(n_estimators=200)
     rfc.fit(x1, np.ravel(y1, order='C'))
@@ -43,7 +34,7 @@ def gradient_boosting(x1,y1,x2,y2):
 if __name__=="__main__":
     rf_accuracy = []
     gb_accuracy = []
-    for i in range(1000):
+    for i in range(10):
         df = pd.read_csv('movie_metadata/processed_data.csv')
         df_train, df_test = train_test_split(df, test_size = 0.2)
         y_train = df_train["quality"]
@@ -53,8 +44,6 @@ if __name__=="__main__":
         print("Iteration : " + str(i))
         rf_accuracy.append(random_forest(x_train, y_train, x_test, y_test))
         gb_accuracy.append(gradient_boosting(x_train, y_train, x_test, y_test))
-    #linear_regression(x_train, y_train, x_test, y_test)
-    #gradient_boosting(x_train, y_train, x_test, y_test)
     print("RF max : " + str(max(rf_accuracy)))
     print("RF mean : " + str(sum(rf_accuracy)/len(rf_accuracy)))
     print("GB max : " + str(max(gb_accuracy)))
