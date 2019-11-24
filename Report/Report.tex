@@ -43,8 +43,8 @@ The IMDb ratings are accurately calculated using a consistent, unbiased formula,
 But more often than not, people visit IMDb to rate the latest movie they had watched, check ratings of other movies, make watch lists accordingly, and many other such activities. Though the rating is only a number, it can be very informative and useful in itself. A rating cast by thousands of viewers generally represents a well-aggregated rating of a movie. \\
 The goal of the project is to predict the IMDb rating of a movie provided various features in the dataset.\\
 \section{Problem Statement}
-Given various data-points of a movie, predict the IMDb rating of the movie in the range of 1 to 10.\\
-This problem falls under the domain of \textbf{Linear Regression}.\\
+Given various data-points of a movie, predict where the IMDb rating of the movie falls in the range of 1 to 10.\\
+This problem falls under the domain of \textbf{Classification}, since we are going to predict the range in which the rating is going to fall and not the exact rating of the movie.\\
 The evaluation metrics of the presented model will be the variance, standard deviation, root-mean-square-error of the predicted IMDb ratings v/s the actual IMDb rating of a particular movie.\\
 \newpage
 \section{Data}
@@ -136,21 +136,72 @@ Fig. 5 shows the correlation matrix among the features. The covariance values of
 \newpage
 \section{Pre-Processing}
 \subsection{Dropping rows}
-The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.
+The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.\\
+
 \subsection{Dropping columns}
 	\begin{enumerate}
-		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.
-		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.
-		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.
-		\item $plot\_keywords, director\_name, actor\_1\_name, \\ actor					\_2\_name,			actor\_3\_name, genres,\\ movie\_imdb\_link$ : 				Most 			of the values in 				these fields are 				unique, so we dropped 		all of these columns.
+		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.\\
+		
+		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.\\
+		
+		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.\\
+		
+		\item $plot\_keywords, director\_name, actor\_1\_name, \\ actor					\_2\_name,			actor\_3\_name, genres,\\ movie\_imdb\_link$ : 				Most 			of the values in 				these fields are 				unique, so we dropped 		all of these columns.\\
 	\end{enumerate}
 \subsection{Labelling}
-The $country$ column had over 79$\%$ of values as $USA$ and 8$\%$ as $UK$. So we labelled all the other countries as $Others$.
-
+The $country$ column had over 79$\%$ of values as $USA$ and 8$\%$ as $UK$. So we labelled all the other countries as $Others$.\\
+\subsection{Handling zeros and null values}
+The null values in all the following columns - $facenumber\_in\_poster, num\_critic\_for\_reviews, duration, \\ actor\_1\_facebook\_likes, actor\_2\_facebook\_likes, \\actor\_3\_facebook\_likes$, were filled with the mean value of the respective columns, since these columns are quantifiable features. \\
+The zeros in the column $facenumber\_in\_poster$ were also treated as null values, since a vast majority of the values were 0, but the column is a significantly quantifiable entity. \\
 
 \section{Feature Extraction}
+We introduced new columns in the dataset-
+\begin{enumerate}
+	\item $quality$ : We divided the IMDb scores of all the movies into buckets of 0-4, 4-6,6-8 and 8-10. This is to make the problem, a \textbf{Classification} problem.\\
+	
+	\item $profit$ : We take the difference between the columns $gross$ and $budget$ to make the column $profit$, since it is a much better indicator of how well a movie had done on box office.\\
+	
+	\item $critic\_review\_ratio$ : We took the ratio of the columns $num\_critic\_for\_reviews$ and $num\_user\_for\_reviews$ to make this column. This indicates the review distribution more clearly. Because sometimes, a popular movie may get a very large number of reviewers, which is unfair for some smaller-market movies.\\
+\end{enumerate}
+For the $content\_rating$ column, there were in total 18 unique values, so we decided to group them and end up with 5 unique values.
+\begin{itemize}
+	\item M, GP, TV-PG, TV-Y7 were grouped together with PG.
+	\item X was grouped together with NC-17.
+	\item Approved, Not-Rated, Passed, Unrated, TV-MA were grouped together with R.
+	\item TV-G, TV-Y were grouped together with G.
+	\item TV-14 was grouped together with PG-13.\\
+\end{itemize}
+Finally, the labels $country$ and $content\_rating$ were \textbf{one-hot-encoded}.
+Thus the features' list had all the quantifiable labels along with the new columns and the grouped and encoded columns.\\
+The target vector was the $quality$ column, for which we train our data on different models described in the next section.\\
+
 \section{Model Building}
+We split our dataset in the ratio of 0.2 to make training and testing data.
+Since the problem is a classification problem, we applied some classifiers on our training data and made predictions on the testing data: 
+\begin{enumerate}
+	\item \textbf{Random Forest Classifier \cite{rf}} : A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. \\
+	The default values for the parameters controlling the size of the trees lead to fully grown and unpruned trees which can potentially be very large on some data sets. To reduce memory consumption, the complexity and size of the trees should be controlled by setting those parameter values. Therefore, we set the n$\_$estimators of the RF-classifier to 200.\\
+	\item \textbf{Gradient Boosting Classifier \cite{rf}} :  GB builds an additive model in a forward stage-wise fashion; it allows for the optimization of arbitrary differentiable loss functions. In each stage n$\_$classes$\_$ regression trees are fit on the negative gradient of the binomial or multinomial deviance loss function. Binary classification is a special case where only a single regression tree is induced.\\
+	The features are always randomly permuted at each split. Therefore, the best found split may vary, even with the same training data and max$\_$features=n$\_$features, if the improvement of the criterion is identical for several splits enumerated during the search of the best split.
+\end{enumerate}
+
 \newpage
+\section{Results}
+\begin{table}[H]
+	\begin{center}
+		\caption{Models and their accuracies}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Classifier} & \textbf{Highest Accuracy} & \textbf{Mean Accuracy}\\
+			\hline
+			 Random Forest Classifier &  79.28$\%$ & 74.98$\%$\\
+			 \hline
+			 Gradient Boosting Classifier & 79.94$\%$ & 75.60$\%$\\
+			 \hline			
+		\end{tabular}
+	\end{center}
+\end{table}
+
 \bibliographystyle{unsrt}
 \bibliography{Bibliography}
 \end{document}
