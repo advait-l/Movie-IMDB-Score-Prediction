@@ -6,6 +6,7 @@ from sklearn import datasets, linear_model
 from sklearn import metrics
 from sklearn.metrics import  mean_squared_error, r2_score, accuracy_score
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.externals import joblib
 
 def linear_regression(x1,y1,x2,y2):
     regr = linear_model.LinearRegression()
@@ -15,12 +16,17 @@ def linear_regression(x1,y1,x2,y2):
     print("Mean-squared-error : " + str(mean_squared_error(y2, imdb_predict)))
     print("Variance : " + str(r2_score(y2, imdb_predict)))
 
+    joblib.dump(regr,'pickle/Linear_reg.pkl')
+
 def random_forest(x1,y1,x2,y2):
     rfc = RandomForestClassifier(n_estimators=200)
     rfc.fit(x1, np.ravel(y1, order='C'))
     rfcpred = rfc.predict(x2)
     cnf_matrix = metrics.confusion_matrix(y2, rfcpred)
     #print(cnf_matrix)
+
+    joblib.dump(rfc,'pickle/RF.pkl')
+
     return metrics.accuracy_score(y2,rfcpred)
 
 def gradient_boosting(x1,y1,x2,y2):
@@ -29,6 +35,9 @@ def gradient_boosting(x1,y1,x2,y2):
     gbcl_pred = gbcl.predict(x2)
     cnf_matrix = metrics.confusion_matrix(y2, gbcl_pred)
     #print(cnf_matrix)
+
+    joblib.dump(gbcl,'pickle/gbcl.pkl')
+
     return metrics.accuracy_score(y2,gbcl_pred)
 
 
