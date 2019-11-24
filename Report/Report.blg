@@ -3,7 +3,7 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Report.aux
 The style file: unsrt.bst
 Database file #1: Bibliography.bib
-I was expecting a `,' or a `}'---line 4 of file Bibliography.bib
+I was expecting a `,' or a `}'---line 12 of file Bibliography.bib
  :  
  :  publisher={Spiegel Online}
 (Error may have been on previous line)
@@ -14,36 +14,38 @@ Warning--empty journal in rating
 Warning--empty year in rating
 Warning--empty journal in data
 Warning--empty year in data
-You've used 3 entries,
+Warning--empty journal in rf
+Warning--empty year in rf
+You've used 4 entries,
             1791 wiz_defined-function locations,
-            455 strings with 3788 characters,
-and the built_in function-call counts, 392 in all, are:
-= -- 24
-> -- 12
+            458 strings with 3826 characters,
+and the built_in function-call counts, 516 in all, are:
+= -- 32
+> -- 16
 < -- 0
-+ -- 6
-- -- 3
-* -- 20
-:= -- 72
-add.period$ -- 6
-call.type$ -- 3
-change.case$ -- 3
++ -- 8
+- -- 4
+* -- 26
+:= -- 93
+add.period$ -- 8
+call.type$ -- 4
+change.case$ -- 4
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 24
-empty$ -- 43
-format.name$ -- 3
-if$ -- 76
+cite$ -- 12
+duplicate$ -- 32
+empty$ -- 57
+format.name$ -- 4
+if$ -- 101
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 15
-num.names$ -- 3
-pop$ -- 18
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 19
+num.names$ -- 4
+pop$ -- 24
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 9
+skip$ -- 12
 stack$ -- 0
 substring$ -- 0
 swap$ -- 0
@@ -51,8 +53,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 3
-width$ -- 4
-write$ -- 23
+warning$ -- 8
+while$ -- 4
+width$ -- 5
+write$ -- 30
 (There was 1 error message)

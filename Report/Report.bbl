@@ -13,4 +13,8 @@ IMDb help.
 Dataset from Kaggle.
 \newblock https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset.
 
+\bibitem{rf}
+Scikit-Learn.
+\newblock https://scikit-learn.org.
+
 \end{thebibliography}
