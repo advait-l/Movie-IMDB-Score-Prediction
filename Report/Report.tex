@@ -136,16 +136,20 @@ Fig. 5 shows the correlation matrix among the features. The covariance values of
 \newpage
 \section{Pre-Processing}
 \subsection{Dropping rows}
-The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.
+The columns $gross$ and $budget$ had the maximum number of missing values, 884 and 492 respectively. Imputation of so many values would provide faulty results, so we decided to drop the rows corressponding to the missing fields of columns $gross$ and $budget$.\\
+
 \subsection{Dropping columns}
 	\begin{enumerate}
-		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.
-		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.
-		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.
-		\item $plot\_keywords, director\_name, actor\_1\_name, \\ actor					\_2\_name,			actor\_3\_name, genres,\\ movie\_imdb\_link$ : 				Most 			of the values in 				these fields are 				unique, so we dropped 		all of these columns.
+		\item $aspect\_ratio$ : The two most frequent values of $aspect\_ratio			$ and the rest of the $aspect\_ratio$ values had similar mean IMDb 				ratings, i.e. the aspect ratio values did not have any significant effect on the IMDb ratings. So we dropped the column $aspect\_ratio$.\\
+		
+		\item $language$ : Most of the movies (more than 90$\%$) are in 				English, so we dropped the column $language$.\\
+		
+		\item $color$ : Most of the movies are colored (more than 90$\%$), so 			we dropped the column $color$.\\
+		
+		\item $plot\_keywords, director\_name, actor\_1\_name, \\ actor					\_2\_name,			actor\_3\_name, genres,\\ movie\_imdb\_link$ : 				Most 			of the values in 				these fields are 				unique, so we dropped 		all of these columns.\\
 	\end{enumerate}
 \subsection{Labelling}
-The $country$ column had over 79$\%$ of values as $USA$ and 8$\%$ as $UK$. So we labelled all the other countries as $Others$.
+The $country$ column had over 79$\%$ of values as $USA$ and 8$\%$ as $UK$. So we labelled all the other countries as $Others$.\\
 \subsection{Handling zeros and null values}
 The null values in all the following columns - $facenumber\_in\_poster, num\_critic\_for\_reviews, duration, \\ actor\_1\_facebook\_likes, actor\_2\_facebook\_likes, \\actor\_3\_facebook\_likes$, were filled with the mean value of the respective columns, since these columns are quantifiable features. \\
 The zeros in the column $facenumber\_in\_poster$ were also treated as null values, since a vast majority of the values were 0, but the column is a significantly quantifiable entity. \\
@@ -153,8 +157,10 @@ The zeros in the column $facenumber\_in\_poster$ were also treated as null value
 \section{Feature Extraction}
 We introduced new columns in the dataset-
 \begin{enumerate}
-	\item $quality$ : We divided the IMDb scores of all the movies into buckets of 0-4, 4-6,6-8 and 8-10. This is to make the problem, a \textbf{Classification} problem.
-	\item $profit$ : We take the difference between the columns $gross$ and $budget$ to make the column $profit$, since it is a much better indicator of how well a movie had done on box office.
+	\item $quality$ : We divided the IMDb scores of all the movies into buckets of 0-4, 4-6,6-8 and 8-10. This is to make the problem, a \textbf{Classification} problem.\\
+	
+	\item $profit$ : We take the difference between the columns $gross$ and $budget$ to make the column $profit$, since it is a much better indicator of how well a movie had done on box office.\\
+	
 	\item $critic\_review\_ratio$ : We took the ratio of the columns $num\_critic\_for\_reviews$ and $num\_user\_for\_reviews$ to make this column. This indicates the review distribution more clearly. Because sometimes, a popular movie may get a very large number of reviewers, which is unfair for some smaller-market movies.\\
 \end{enumerate}
 For the $content\_rating$ column, there were in total 18 unique values, so we decided to group them and end up with 5 unique values.
@@ -165,7 +171,7 @@ For the $content\_rating$ column, there were in total 18 unique values, so we de
 	\item TV-G, TV-Y were grouped together with G.
 	\item TV-14 was grouped together with PG-13.\\
 \end{itemize}
-Finally, the labels $country$ and $content\_rating$ were encoded.
+Finally, the labels $country$ and $content\_rating$ were \textbf{one-hot-encoded}.
 Thus the features' list had all the quantifiable labels along with the new columns and the grouped and encoded columns.\\
 The target vector was the $quality$ column, for which we train our data on different models described in the next section.\\
 
@@ -188,9 +194,9 @@ Since the problem is a classification problem, we applied some classifiers on ou
 			\hline
 			\textbf{Classifier} & \textbf{Highest Accuracy} & \textbf{Mean Accuracy}\\
 			\hline
-			 Random Forest Classifier &  lol & lol\\
+			 Random Forest Classifier &  79.28$\%$ & 74.98$\%$\\
 			 \hline
-			 Gradient Boosting Classifier & lmao & lmao\\
+			 Gradient Boosting Classifier & 79.94$\%$ & 75.60$\%$\\
 			 \hline			
 		\end{tabular}
 	\end{center}

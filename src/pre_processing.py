@@ -34,7 +34,6 @@ def handlingValues(df):
     # Group by column
     df["quality"] = pd.cut(df["imdb_score"], bins=[0,4,6,8,10], right=True, labels=False)+1
     df = df.drop(columns = "imdb_score")
-    print(df["quality"])
     
     # Profit column
     df["profit"] = df["gross"] - df["budget"]
@@ -78,5 +77,5 @@ if __name__ == "__main__":
     df = remove_duplicates(df)
     df = encoding(df)
     print(df.isnull().sum())
-    print(df)
+    #print(df)
     df.to_csv('movie_metadata/processed_data.csv')
