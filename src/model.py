@@ -16,7 +16,6 @@ def linear_regression(x1,y1,x2,y2):
     print("Mean-squared-error : " + str(mean_squared_error(y2, imdb_predict)))
     print("Variance : " + str(r2_score(y2, imdb_predict)))
 
-    joblib.dump(regr,'pickle/Linear_reg.pkl')
 
 def random_forest(x1,y1,x2,y2):
     rfc = RandomForestClassifier(n_estimators=200)
