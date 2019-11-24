@@ -31,6 +31,11 @@ def handlingValues(df):
     df["actor_2_facebook_likes"] = df["actor_2_facebook_likes"].fillna(df["actor_2_facebook_likes"].mean())
     df["actor_3_facebook_likes"] = df["actor_3_facebook_likes"].fillna(df["actor_3_facebook_likes"].mean())
 
+    # Group by column
+    df["quality"] = pd.cut(df["imdb_score"], bins=[0,4,6,8,10], right=True, labels=False)+1
+    df = df.drop(columns = "imdb_score")
+    print(df["quality"])
+    
     # Profit column
     df["profit"] = df["gross"] - df["budget"]
 

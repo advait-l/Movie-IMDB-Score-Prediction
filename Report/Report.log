@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.3)  23 NOV 2019 22:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,7 +440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-<../visualizations/IMDB-Score-Histogram.png, id=68, 578.16pt x 397.485pt>
+<../visualizations/IMDB-Score-Histogram.png, id=72, 578.16pt x 397.485pt>
 File: ../visualizations/IMDB-Score-Histogram.png Graphic file (type png)
 <use ../visualizations/IMDB-Score-Histogram.png>
 Package pdftex.def Info: ../visualizations/IMDB-Score-Histogram.png  used on in
@@ -451,7 +451,7 @@ Overfull \hbox (4.07793pt too wide) in paragraph at lines 90--91
  [][] 
  []
 
-<../visualizations/Language-Histogram.png, id=71, 867.24pt x 722.7pt>
+<../visualizations/Language-Histogram.png, id=75, 867.24pt x 722.7pt>
 File: ../visualizations/Language-Histogram.png Graphic file (type png)
 <use ../visualizations/Language-Histogram.png>
 Package pdftex.def Info: ../visualizations/Language-Histogram.png  used on inpu
@@ -462,7 +462,7 @@ Overfull \hbox (32.51952pt too wide) in paragraph at lines 100--101
  [][] 
  []
 
-<../visualizations/Country-Histogram.png, id=73, 867.24pt x 722.7pt>
+<../visualizations/Country-Histogram.png, id=77, 867.24pt x 722.7pt>
 File: ../visualizations/Country-Histogram.png Graphic file (type png)
 <use ../visualizations/Country-Histogram.png>
 Package pdftex.def Info: ../visualizations/Country-Histogram.png  used on input
@@ -473,7 +473,7 @@ Overfull \hbox (32.51952pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
-<../visualizations/Colour-Histogram.png, id=75, 867.24pt x 1011.78pt>
+<../visualizations/Colour-Histogram.png, id=79, 867.24pt x 1011.78pt>
 File: ../visualizations/Colour-Histogram.png Graphic file (type png)
 <use ../visualizations/Colour-Histogram.png>
 Package pdftex.def Info: ../visualizations/Colour-Histogram.png  used on input 
@@ -489,7 +489,7 @@ Underfull \vbox (badness 8000) has occurred while \output is active []
 
  [2 <../visualizations/IMDB-Score-Histogram.png> <../visualizations/Language-Hi
 stogram.png> <../visualizations/Country-Histogram.png>]
-<../visualizations/corr_matrix.png, id=90, 1300.86pt x 1300.86pt>
+<../visualizations/corr_matrix.png, id=94, 1300.86pt x 1300.86pt>
 File: ../visualizations/corr_matrix.png Graphic file (type png)
 <use ../visualizations/corr_matrix.png>
 Package pdftex.def Info: ../visualizations/corr_matrix.png  used on input line 
@@ -519,27 +519,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
 [4
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: C2E7B3B49F1202894C35A8C1F01B98D9;671.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
+(rerunfilecheck)             Checksum: DDF5E1E3CECF04B03EA4A5940976FA02;751.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 7500 strings out of 494880
- 116800 string characters out of 6179601
- 208423 words of memory out of 5000000
- 10736 multiletter control sequences out of 15000+600000
+ 7502 strings out of 494880
+ 116830 string characters out of 6179601
+ 208426 words of memory out of 5000000
+ 10737 multiletter control sequences out of 15000+600000
  34568 words of font info for 65 fonts, out of 8000000 for 9000
  39 hyphenation exceptions out of 8191
  36i,9n,39p,417b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -550,10 +546,10 @@ fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Report.pdf (4 pages, 416202 bytes).
+Output written on Report.pdf (4 pages, 416615 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
- 152 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
