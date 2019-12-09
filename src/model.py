@@ -20,7 +20,7 @@ def random_forest(x1,y1,x2,y2):
     return metrics.accuracy_score(y2,rfcpred)
 
 def gradient_boosting(x1,y1,x2,y2):
-    gbcl = GradientBoostingClassifier(n_estimators=50, learning_rate=0.09, max_depth=5)
+    gbcl = GradientBoostingClassifier(n_estimators=50, learning_rate=0.09,  max_depth=5)
     gbcl = gbcl.fit(x1, np.ravel(y1, order='C'))
     gbcl_pred = gbcl.predict(x2)
     cnf_matrix = metrics.confusion_matrix(y2, gbcl_pred)
@@ -34,7 +34,7 @@ def gradient_boosting(x1,y1,x2,y2):
 if __name__=="__main__":
     rf_accuracy = []
     gb_accuracy = []
-    for i in range(10):
+    for i in range(1):
         df = pd.read_csv('movie_metadata/processed_data.csv')
         df_train, df_test = train_test_split(df, test_size = 0.2)
         y_train = df_train["quality"]
